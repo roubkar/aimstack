@@ -105,9 +105,9 @@ export default function Home() {
             <h1>
               A super-easy way to record, search and compare AI experiments
             </h1>
-            <h2>
+            <p>
               An AI dev tool focused on comparing your experiments in no time
-            </h2>
+            </p>
             <button onClick={copyToClipboard}>
               <i className='material-icons'>content_copy</i>
               $ pip install aim

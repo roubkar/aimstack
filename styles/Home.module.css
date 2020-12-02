@@ -128,6 +128,8 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 72px;
+  margin-top: -72px;
 }
 
 .polygon {
@@ -141,8 +143,8 @@
   clip-path: polygon(
     0 0,
     100% 0,
-    100% 300px,
-    0 75%
+    100% 40%,
+    0 60%
   );
   background-color: #3C5896;
   z-index: -1;
@@ -155,19 +157,23 @@
 
 .section h2 {
   margin: 2rem 0;
-  font-size: 1.5rem;
   color: #333333;
+  font-size: 36px;
+  line-height: 50px;
 }
 
 .section h5 {
+  margin: 0;
   color: #3C5896;
   text-transform: uppercase;
-  margin: 0;
+  font-size: 12px;
 }
 
 .section p {
   margin: 0;
   color: #1a1b1f;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .separator {
@@ -176,20 +182,22 @@
 }
 
 .moto {
-  padding: 1rem 0;
   display: flex;
   flex-direction: column;
+  padding: 1rem 0;
+  margin-top: -2rem;
 }
 
 .moto h1 {
   color: #ffffff;
-  font-size: 2.5rem;
+  font-size: 42px;
   margin: 0;
 }
 
-.moto h2 {
+.moto p {
   color: rgba(255, 255, 255, 0.5);
   margin: 1rem 0;
+  line-height: unset;
 }
 
 .moto button {
@@ -231,6 +239,8 @@
 .aimDescription ul {
   color: #3C5896;
   font-weight: bold;
+  font-size: 16px;
+  line-height: 28px;
 }
 
 .example {
@@ -381,11 +391,15 @@
   .section > div {
     justify-content: center;
     padding: 2rem;
-    max-width: none;
+    max-width: unset;
   }
 
-  .logoContainer img {
-    max-width: 100%;
+  .logoContainer img, .example {
+    max-width: 100% !important;
+  }
+
+  .example {
+    min-width: unset !important;
   }
 
   .learn {
@@ -411,7 +425,12 @@
     display: flex;
   }
 
+  .section h2 {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
   .moto h1 {
-    font-size: 2rem;
+    font-size: 32px;
   }
 }
