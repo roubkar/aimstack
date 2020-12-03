@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import React, { useState, useEffect, useRef } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { nord } from 'react-syntax-highlighter/dist/cjs/styles/prism';
+import { prism } from 'react-syntax-highlighter/dist/cjs/styles/prism';
 import styles from '../styles/Home.module.css';
 
 export default function Home() {
@@ -15,10 +15,10 @@ export default function Home() {
     setScrolled(window.scrollY > window.innerHeight / 2);
   }
 
-  function copyToClipboard() {
+  function copyToClipboard(text) {
     if (copyRef.current === null) {
       copyRef.current = document.createElement('input');
-      copyRef.current.value = 'pip install aim';
+      copyRef.current.value = text;
       copyRef.current.style.position = 'fixed';
       copyRef.current.style.left = '-9999999px';
     }
@@ -67,8 +67,7 @@ export default function Home() {
         <script async src='https://www.googletagmanager.com/gtag/js?id=UA-108474435-1'></script>
 
         <link rel='preconnect' href='https://fonts.gstatic.com' />
-        <link href='https://fonts.googleapis.com/css2?family=Montserrat&display=swap' rel='stylesheet' />
-        <link rel='preconnect' href='https://fonts.gstatic.com' />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap" rel="stylesheet" />
         <link href='https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap' rel='stylesheet' />
         <link href='https://fonts.googleapis.com/icon?family=Material+Icons' rel='stylesheet' />
       </Head>
@@ -108,10 +107,6 @@ export default function Home() {
             <p>
               An AI dev tool focused on comparing your experiments in no time
             </p>
-            <button onClick={copyToClipboard}>
-              <i className='material-icons'>content_copy</i>
-              $ pip install aim
-            </button>
           </div>
           <div className={styles.logoContainer}>
             <img alt='Aim UI' src='/aim-ui.png' draggable={false} />
@@ -140,9 +135,12 @@ export default function Home() {
             </ul>
           </div>
           <div className={styles.example}>
-            <SyntaxHighlighter language='python' style={nord}>
-              {`
-import aim
+            <SyntaxHighlighter language='python' style={prism}>
+              pip instal aim
+            </SyntaxHighlighter>
+            <SyntaxHighlighter language='python' style={prism}>
+              {
+`import aim
 
 # Save inputs, hparams or any other 'key: value' pairs
 aim.set_params(hyperparam_dict, name='hparams')
@@ -152,8 +150,11 @@ aim.set_params(hyperparam_dict, name='hparams')
 for step in range(10):
   # Log metrics to visualize performance
   aim.track(metric_value, name='metric_name', epoch=epoch_number)
-...
-              `}
+...`
+              }
+            </SyntaxHighlighter>
+            <SyntaxHighlighter language='python' style={prism}>
+              aim up
             </SyntaxHighlighter>
           </div>
         </section>
@@ -173,7 +174,18 @@ for step in range(10):
               >
                 <img alt='Aim video tutorial 1' src='/aim-vid-1.jpg' />
                 <div className={styles.playButton} />
+                <p>
+                  Sep 21, 2020 <span>•</span> 2:38 Min
+                </p>
                 <h3>How to use Aim to compare 100s of experiments in minutes</h3>
+                {/* <a
+                  href='https://www.youtube.com/channel/UCDNWviOImIlaN5cdN2ob7bA'
+                  target='_blank'
+                  rel='noreferrer noopener'
+                >
+                  <img alt='Aim logo' src='/aimhub-icon.png' />
+                  Aim
+                </a> */}
               </a>
               <a 
                 className={styles.card}
@@ -183,7 +195,18 @@ for step in range(10):
               >
                 <img alt='Aim video tutorial 2' src='/aim-vid-2.jpg' />
                 <div className={styles.playButton} />
+                <p>
+                  Dec 1, 2020 <span>•</span> 2:31 Min
+                </p>
                 <h3>Analyzing 60+ experiments using Parallel Coordinates in Aim</h3>
+                {/* <a
+                  href='https://www.youtube.com/channel/UCDNWviOImIlaN5cdN2ob7bA'
+                  target='_blank'
+                  rel='noreferrer noopener'
+                >
+                  <img alt='' src='/aimhub-icon.png' />
+                  Aim
+                </a> */}
               </a>
               <a
                 className={styles.card}
@@ -192,6 +215,9 @@ for step in range(10):
                 rel='noreferrer noopener'
               >
                 <img alt='Aim blog post' src='/aim-ui-blog.png' />
+                <p>
+                  Jun 24, 2020 <span>•</span> 3 Min Read
+                </p>
                 <h3>3 Ways Aim Can Accelerate Your AI Research</h3>
               </a>
             </div>
