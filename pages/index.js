@@ -209,15 +209,15 @@ for step in range(10):
               </a>
               <a
                 className={styles.card}
-                href='https://medium.com/@gevorg-s/3-ways-aim-can-accelerate-your-ai-research-c03643ae6558'
+                href='https://gevorg-s.medium.com/launching-aim-an-open-ai-development-environment-b0b69d5b8ff2'
                 target='_blank'
                 rel='noreferrer noopener'
               >
-                <img alt='Aim blog post' src='/aim-ui-blog.png' />
+                <img alt='Aim blog post' src='/aim-blog-post-1.png' />
                 <p>
                   Jun 24, 2020 <span>•</span> 3 Min Read
                 </p>
-                <h3>3 Ways Aim Can Accelerate Your AI Research</h3>
+                <h3>Launching Aim — an open AI development environment</h3>
               </a>
             </div>
           </div>

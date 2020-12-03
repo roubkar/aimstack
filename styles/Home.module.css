@@ -313,7 +313,7 @@
   margin-right: 10px;
 }
 
-.playButton {
+.playButton, .readButton {
   position: absolute;
   display: flex;
   align-items: center;
@@ -338,7 +338,12 @@
   transform: translateX(3px);
 }
 
-.card:hover .playButton {
+.readButton i {
+  color: #ffffff;
+  font-size: 28px;
+}
+
+.card:hover .playButton, .card:hover .readButton {
   transform: scale(1.1);
 }
 
